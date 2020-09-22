@@ -1,10 +1,9 @@
 import java.util.Scanner;
 /**
- * Write a description of class AtmMachine here.
  * Program acts like an atm machine at your local bank
  *
  * @author (Devon Biancarelli)
- * @version (July 26th,2020)
+ * @version (Sep 12th,2020)
  */
 public class AtmMachine
 {
