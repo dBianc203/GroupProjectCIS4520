@@ -1,6 +1,6 @@
-~~ 9/11/20 – Have Money Management (Deposit and withdraw) portion of program finished/working. (You can show a working program that uses 2 bank accounts and you can withdraw from those accounts, deposit in them, check both balances, and quick withdraw from checking.) ~~
+9/11/20 – Have Money Management (Deposit and withdraw) portion of program finished/working. (You can show a working program that uses 2 bank accounts and you can withdraw from those accounts, deposit in them, check both balances, and quick withdraw from checking.) (((((((DONE))))))))
 
-9/18/20 – Have html pages finished for money management portion of the program (be able to present pages for depositing, withdrawing, checking balance, and quick withdrawing, along with a login screen for the website)
+9/18/20 – Have html pages finished for money management portion of the program (be able to present pages for depositing, withdrawing, checking balance, and quick withdrawing, along with a login screen for the website) ((((((DONE))))))
 
 9/18/20- SQL is written for the database and the database is now accepting information. Also set up apache.
 
