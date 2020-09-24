@@ -1,0 +1,13 @@
+9/11/20 – Have Money Management (Deposit and withdraw) portion of program finished/working. (You can show a working program that uses 2 bank accounts and you can withdraw from those accounts, deposit in them, check both balances, and quick withdraw from checking.)
+9/18/20 – Have html pages finished for money management portion of the program (be able to present pages for depositing, withdrawing, checking balance, and quick withdrawing, along with a login screen for the website)
+9/18/20- SQL is written for the database and the database is now accepting information. Also set up apache.
+9/28/20 – Connect html and java and make a functioning prototype using fake data for money management.( Example: I could click on the withdraw button on the website and choose how much to withdraw from one of these accounts by clicking the correct buttons.)
+9/28/20- Setup home page with links to both web pages.
+10/2/20 – Finish Budgeting portion program for the project (present a program that tracks purchases made and is able to make a monthly budget, inputted by the user)
+10/2/20- enable users to login under other accounts besides the default account for testing
+10/8/20 – finish html pages for the budgeting portion of the project.( Present a website that shows the user where they can input their monthly budget along with being able to input past purchases made.)
+10/15/20 -Connect html pages and budget part of the program and use fake data to make a prototype
+10/22/20 – Once both portions of our program work, connect them all together into one program and test using fake data to make sure everything runs smoothly.( From the main screen/webpage the user will be able to pick the budgeting portion of the website or the money management portion.)
+10/29/20 – Connect our program with our database.
+11/5/20 – Continue testing our program along with modernizing the style of the html pages to make the website seem more attractive. ( Have the website be more than just a solid green button with how much money the user wants to deposit or withdraw)
+11/12/20 – Project should be roughly 95-100% complete/ continue testing
