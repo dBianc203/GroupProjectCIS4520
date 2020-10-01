@@ -8,49 +8,52 @@ import java.util.Scanner;
  */
 public class AtmMachine
 {
+    /** 
+     * This is a program for mimicing an atm machine at a local bank that can handle funds. 
+     * @param args 
+     */
   public static void main(String[] args) {
       
-      int InitialBalanceCheck = 2500; /**< Creates a fake balance for a checking account*/
-      int InitialBalanceSavings = 5000;/**< Creates a fake balance for a savings account */
-      int Withdraw; /**< 1-6 that will determine how much is withdrawn from an account */
-      int Deposit; /**< 1-6 that will determine how much is deposited into an account */
-      
-      Scanner Scan = new Scanner(System.in);  /**< Creates scanner to recieve input */
-      
-      
+      /** Creates a fake balance for a checking account*/
+      int InitialBalanceCheck = 2500; 
+      /** Creates a fake balance for a savings account */
+      int InitialBalanceSavings = 5000;
+      /** 1-6 that will determine how much is withdrawn from an account */
+      int Withdraw;
+      /** 1-6 that will determine how much is deposited into an account */
+      int Deposit;
+      /** Creates scanner to recieve input */
+      Scanner Scan = new Scanner(System.in);  
+
       boolean session = true;
+       
+      /** presents a list of options for the user */
       while(session){
       
-      /**
-       * 
-       * Presents a list of options for the user to choose from
-       * 
-       */
+
       System.out.println("ATM Machine");
       System.out.println("Choose 1 for Withdraw");
       System.out.println("Choose 2 for Deposit");
       System.out.println("Choose 3 for Check Balance");
       System.out.println("Choose 4 for Quick Withdraw From Checking");
       System.out.println("Choose 5 to Exit the application");
+      System.out.println("Choose 6 to Transfer money");
       
       System.out.println("Choose your option");
     
       int Choice = Scan.nextInt(); /**< Allows the user input */
      
-      switch(Choice) /**< Switch statement that will react based on the users input being 1 for withdraw */
+      switch(Choice) /** Switch statement that will react based on the users input being 1 for withdraw */
       {
-                /**
-                 * 
-                 * Will ask the user if they want to withdraw from their savings account or checking account
-                 * 
-                 */
-          case 1:
+                
+                 
+          case 1: /** Will ask the user if they want to withdraw from their savings account or checking account */
           
           System.out.println("Do you want to withdraw from savings or checking?");
           System.out.println("1 for savings, 2 for checking");
           int Withinput = Scan.nextInt();
           
-          if (Withinput == (1)) /**< If the user input is "1" it will withdraw from savings and ask for the amount */
+          if (Withinput == (1)) /** If the user input is "1" it will withdraw from savings and ask for the amount */
           {
            System.out.println("How much do you want withdrawn?");
            System.out.println("Enter 1 for $20");
@@ -62,7 +65,7 @@ public class AtmMachine
            
            Withdraw = Scan.nextInt();
           
-           if(Withdraw == (1)) /**< If user input = 1 it will withdraw $20 from the savings account*/
+           if(Withdraw == (1)) /** If user input = 1 it will withdraw $20 from the savings account*/
            {
               InitialBalanceSavings = InitialBalanceSavings - (20);
               System.out.println("Money withdrawn successfully");
@@ -70,21 +73,21 @@ public class AtmMachine
               System.out.println(""); 
            }
             
-           else if (Withdraw == (2)) /**< If user input = 2 it will withdraw $40 from the savings account*/
+           else if (Withdraw == (2)) /** If user input = 2 it will withdraw $40 from the savings account*/
            {
               InitialBalanceSavings = InitialBalanceSavings - (40);
               System.out.println("Money withdrawn successfully");
               System.out.println(InitialBalanceSavings);
               System.out.println(""); 
             }
-           else if (Withdraw == (3)) /**< If user input = 3 it will withdraw $60 from the savings account*/
+           else if (Withdraw == (3)) /** If user input = 3 it will withdraw $60 from the savings account*/
            {
               InitialBalanceSavings = InitialBalanceSavings - (60);
               System.out.println("Money withdrawn successfully");
               System.out.println(InitialBalanceSavings);
               System.out.println(""); 
             }
-           else if (Withdraw == (4)) /**< If user input = 4 it will withdraw $100 from the savings account*/
+           else if (Withdraw == (4)) /** If user input = 4 it will withdraw $100 from the savings account*/
            {
               InitialBalanceSavings = InitialBalanceSavings - (100);
               System.out.println("Money withdrawn successfully");
@@ -287,27 +290,167 @@ public class AtmMachine
         {
         System.out.println("Your Balance is : " + InitialBalanceSavings);
         System.out.println("");
-    }
+        }
         if (CheckInfo == (2)) /**< If user input = 2 it will check the balance of the users checking account*/
         {
         System.out.println("Your Balance is : " + InitialBalanceCheck);
         System.out.println("");
-    }
-    break;
+        }
+        break;
     
         case 4: /**< Withdraws $20 fromt the users checking account*/
         InitialBalanceCheck = InitialBalanceCheck - 20;
         System.out.println("Collect your moneyz");
         System.out.println("");
-    break;
+        break;
     
         case 5: /**< Quits the program*/
         System.out.println("Bye Bye");
          System.exit(1);
         break;
+        
+        case 6:
+        System.out.println("Which account do you want to transfer money to?");
+        System.out.println("Press 1 for Checking to Savings, press 2 for Savings to Checking.");
+        int TransferChoice = Scan.nextInt();
+        
+        if (TransferChoice ==(1))
+        {
+           System.out.println("How much do you want to transfer to your savings?");
+           
+           System.out.println("Enter 1 for $20");
+           System.out.println("Enter 2 for $40");
+           System.out.println("Enter 3 for $60");
+           System.out.println("Enter 4 for $100");
+           System.out.println("Enter 5 for $200");
+           System.out.println("Enter 6 for $300");
+           
+           int TransferAmount = Scan.nextInt();
+           
+           if (TransferAmount ==(1))
+           {
+              InitialBalanceSavings = InitialBalanceSavings + (20);
+              InitialBalanceCheck = InitialBalanceCheck - (20);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           else if (TransferAmount ==(2))
+           {
+              InitialBalanceSavings = InitialBalanceSavings + (40);
+              InitialBalanceCheck = InitialBalanceCheck - (40);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           else if (TransferAmount ==(3))
+           {
+              InitialBalanceSavings = InitialBalanceSavings + (60);
+              InitialBalanceCheck = InitialBalanceCheck - (60);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           else if (TransferAmount ==(4))
+           {
+              InitialBalanceSavings = InitialBalanceSavings + (100);
+              InitialBalanceCheck = InitialBalanceCheck - (100);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           else if (TransferAmount ==(5))
+           {
+              InitialBalanceSavings = InitialBalanceSavings + (200);
+              InitialBalanceCheck = InitialBalanceCheck - (200);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           else if (TransferAmount ==(6))
+           {
+              InitialBalanceSavings = InitialBalanceSavings + (300);
+              InitialBalanceCheck = InitialBalanceCheck - (300);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+        }
+        if (TransferChoice ==(2))
+        {
+              System.out.println("How much do you want to transfer to your checking?");
+              System.out.println("Enter 1 for $20");
+              System.out.println("Enter 2 for $40");
+              System.out.println("Enter 3 for $60");
+              System.out.println("Enter 4 for $100");
+              System.out.println("Enter 5 for $200");
+              System.out.println("Enter 6 for $300");
+              int TransferAmount = Scan.nextInt();
+              
+           if (TransferAmount ==(1))
+           {
+              InitialBalanceSavings = InitialBalanceCheck + (20);
+              InitialBalanceCheck = InitialBalanceSavings - (20);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           if (TransferAmount ==(2))
+           {
+              InitialBalanceSavings = InitialBalanceCheck + (40);
+              InitialBalanceCheck = InitialBalanceSavings - (40);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           if (TransferAmount ==(3))
+           {
+              InitialBalanceSavings = InitialBalanceCheck + (60);
+              InitialBalanceCheck = InitialBalanceSavings - (60);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           if (TransferAmount ==(4))
+           {
+              InitialBalanceSavings = InitialBalanceCheck + (100);
+              InitialBalanceCheck = InitialBalanceSavings - (100);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           if (TransferAmount ==(5))
+           {
+              InitialBalanceSavings = InitialBalanceCheck + (200);
+              InitialBalanceCheck = InitialBalanceSavings - (200);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+           if (TransferAmount ==(6))
+           {
+              InitialBalanceSavings = InitialBalanceCheck + (300);
+              InitialBalanceCheck = InitialBalanceSavings - (300);
+              System.out.println("Money transfered successfully");
+              System.out.println("Savings Balance " + InitialBalanceSavings);
+              System.out.println("Checking Balance " + InitialBalanceCheck);
+              System.out.println("");
+            }
+        }
+        break;
     }
+  }
+ }
 }
-}
-}
-
   
