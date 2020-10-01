@@ -395,8 +395,8 @@ public class AtmMachine
               
            if (TransferAmount ==(1))
            {
-              InitialBalanceSavings = InitialBalanceCheck + (20);
-              InitialBalanceCheck = InitialBalanceSavings - (20);
+              InitialBalanceCheck = InitialBalanceCheck + (20);
+              InitialBalanceSavings = InitialBalanceSavings - (20);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -404,8 +404,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(2))
            {
-              InitialBalanceSavings = InitialBalanceCheck + (40);
-              InitialBalanceCheck = InitialBalanceSavings - (40);
+              InitialBalanceCheck = InitialBalanceCheck + (40);
+              InitialBalanceSavings = InitialBalanceSavings - (40);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -413,8 +413,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(3))
            {
-              InitialBalanceSavings = InitialBalanceCheck + (60);
-              InitialBalanceCheck = InitialBalanceSavings - (60);
+              InitialBalanceCheck = InitialBalanceCheck + (60);
+              InitialBalanceSavings = InitialBalanceSavings - (60);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -422,8 +422,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(4))
            {
-              InitialBalanceSavings = InitialBalanceCheck + (100);
-              InitialBalanceCheck = InitialBalanceSavings - (100);
+              InitialBalanceCheck = InitialBalanceCheck + (100);
+              InitialBalanceSavings = InitialBalanceSavings - (100);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -431,8 +431,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(5))
            {
-              InitialBalanceSavings = InitialBalanceCheck + (200);
-              InitialBalanceCheck = InitialBalanceSavings - (200);
+              InitialBalanceCheck = InitialBalanceCheck + (200);
+              InitialBalanceSavings = InitialBalanceSavings - (200);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -440,8 +440,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(6))
            {
-              InitialBalanceSavings = InitialBalanceCheck + (300);
-              InitialBalanceCheck = InitialBalanceSavings - (300);
+              InitialBalanceCheck = InitialBalanceCheck + (300);
+              InitialBalanceSavings = InitialBalanceSavings - (300);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
