@@ -3,5 +3,4 @@ comment0.target=AtmMachine
 comment0.text=\r\n\ \r\n\ Program\ acts\ like\ an\ atm\ machine\ at\ your\ local\ bank\r\n\r\n\ @author\ (Devon\ Biancarelli)\r\n\ @version\ (August\ 26th,2020)\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment1.text=\ \r\n\ This\ is\ a\ program\ for\ mimicing\ an\ atm\ machine\ at\ a\ local\ bank\ that\ can\ handle\ funds.\ \r\n\ @param\ args\ \r\n
 numComments=2

@@ -9,23 +9,24 @@ import java.util.Scanner;
 public class AtmMachine
 {
     /** 
-     * This is a program for mimicking an atm machine at a local bank that can handle funds. 
+     * This is a program for mimicing an atm machine at a local bank that can handle funds. 
      * @param args 
      */
+      /** Creates a fake balance for a checking account*/
+     public static int InitialBalanceCheck = 2500; 
+      /** Creates a fake balance for a savings account */
+      public static int InitialBalanceSavings = 5000;
+      /** 1-6 that will determine how much is withdrawn from an account */
+      public static int Withdraw;
+      /** 1-6 that will determine how much is deposited into an account */
+      public static int Deposit;
+      /** Creates scanner to recieve input */
+     public static Scanner Scan = new Scanner(System.in);  
+     
+        /** as long as session is active, the program will continue and not stop */
+      public static boolean session = true;
   public static void main(String[] args) {
       
-      /** Creates a fake balance for a checking account*/
-      int InitialBalanceCheck = 2500; 
-      /** Creates a fake balance for a savings account */
-      int InitialBalanceSavings = 5000;
-      /** 1-6 that will determine how much is withdrawn from an account */
-      int Withdraw;
-      /** 1-6 that will determine how much is deposited into an account */
-      int Deposit;
-      /** Creates scanner to receive input */
-      Scanner Scan = new Scanner(System.in);  
-
-      boolean session = true;
        
       /** presents a list of options for the user */
       while(session){
@@ -395,8 +396,8 @@ public class AtmMachine
               
            if (TransferAmount ==(1))
            {
-              InitialBalanceCheck = InitialBalanceCheck + (20);
-              InitialBalanceSavings = InitialBalanceSavings - (20);
+              InitialBalanceSavings = InitialBalanceCheck + (20);
+              InitialBalanceCheck = InitialBalanceSavings - (20);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -404,8 +405,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(2))
            {
-              InitialBalanceCheck = InitialBalanceCheck + (40);
-              InitialBalanceSavings = InitialBalanceSavings - (40);
+              InitialBalanceSavings = InitialBalanceCheck + (40);
+              InitialBalanceCheck = InitialBalanceSavings - (40);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -413,8 +414,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(3))
            {
-              InitialBalanceCheck = InitialBalanceCheck + (60);
-              InitialBalanceSavings = InitialBalanceSavings - (60);
+              InitialBalanceSavings = InitialBalanceCheck + (60);
+              InitialBalanceCheck = InitialBalanceSavings - (60);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -422,8 +423,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(4))
            {
-              InitialBalanceCheck = InitialBalanceCheck + (100);
-              InitialBalanceSavings = InitialBalanceSavings - (100);
+              InitialBalanceSavings = InitialBalanceCheck + (100);
+              InitialBalanceCheck = InitialBalanceSavings - (100);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -431,8 +432,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(5))
            {
-              InitialBalanceCheck = InitialBalanceCheck + (200);
-              InitialBalanceSavings = InitialBalanceSavings - (200);
+              InitialBalanceSavings = InitialBalanceCheck + (200);
+              InitialBalanceCheck = InitialBalanceSavings - (200);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
@@ -440,8 +441,8 @@ public class AtmMachine
             }
            if (TransferAmount ==(6))
            {
-              InitialBalanceCheck = InitialBalanceCheck + (300);
-              InitialBalanceSavings = InitialBalanceSavings - (300);
+              InitialBalanceSavings = InitialBalanceCheck + (300);
+              InitialBalanceCheck = InitialBalanceSavings - (300);
               System.out.println("Money transfered successfully");
               System.out.println("Savings Balance " + InitialBalanceSavings);
               System.out.println("Checking Balance " + InitialBalanceCheck);
