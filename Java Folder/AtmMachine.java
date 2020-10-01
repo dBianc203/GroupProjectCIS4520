@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class AtmMachine
 {
     /** 
-     * This is a program for mimicing an atm machine at a local bank that can handle funds. 
+     * This is a program for mimicking an atm machine at a local bank that can handle funds. 
      * @param args 
      */
   public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class AtmMachine
       int Withdraw;
       /** 1-6 that will determine how much is deposited into an account */
       int Deposit;
-      /** Creates scanner to recieve input */
+      /** Creates scanner to receive input */
       Scanner Scan = new Scanner(System.in);  
 
       boolean session = true;
