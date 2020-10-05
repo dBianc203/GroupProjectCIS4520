@@ -1,22 +1,22 @@
 <?php
 include('connect.php');
-//saves errors
+//!saves errors
 $errors =array('Email'=>'','Password'=>'','LastName'=>'','FirstName'=>'','Age'=>'','SocialSecurity'=>'','Address1'=>'','Address2'=>'');
-//saves users input when submit is clicked
+//!saves users input when submit is clicked
 $Email = $password = $LastName = $FirstName = $Age = $SocialSecurity = $Address1 = $address2 = '';
 
 if(isset($_POST['submit'])){
   if (empty($_POST['Email'])) {
-    //$errors[0] = "Email is required";
+    //!$errors[0] = "Email is required";
   }else {
     $email = $_POST['Email'];
-    //vaild email check
+    //!vaild email check
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $errors[0] =  "Email must be valid";
     }
   }
 
-  //vaild Password check
+  //!vaild Password check
   if (empty($_POST['Password'])) {
     $errors[1] = "Password is required";
   }else {
@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
     $errors[1] =  " Enter a valid password with a lenth of above 9 and no special characters";
   }
   }
-  //vaild LastName check
+  //!vaild LastName check
   if (empty($_POST['LastName'])) {
     $errors[2] = "Last Name is required";
   }else {
@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
   }
 }
 
-  //vaild FirstName
+  //!vaild FirstName
   if (empty($_POST['FirstName'])) {
     $errors[3] =  "Last Name is required";
   }else {
@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
   }
   }
 
-  //vaild Age check
+  //!vaild Age check
   if (empty($_POST['Age'])) {
     $errors[4] =  "Age is required";
   }else {
@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
   }
   }
 
-  //vaild SocialSecurity check
+  //!vaild SocialSecurity check
   if (empty($_POST['SocialSecurity'])) {
     $errors[5] =  "Social Security is required";
   }else {
@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
   }
   }
 
-  //vaild Address1 check
+  //!vaild Address1 check
   if (empty($_POST['Address1'])) {
     $errors[6] =  "Address1 is required";
   }else {
@@ -75,9 +75,9 @@ if(isset($_POST['submit'])){
   }
   }
 
-  //vaild Address2 check
+  //!vaild Address2 check
   if (!empty($_POST['Address2']) and !preg_match($address2,'/^[a-zA-Z1-9]{9,255}$/')) {
-    //$Address2=$_POST['Address2'];
+    //!$Address2=$_POST['Address2'];
     $errors[7] =  " Enter a valid Address2 with a lenth of above 9 and no special characters";
   }
 }
