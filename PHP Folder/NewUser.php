@@ -83,7 +83,7 @@ if(isset($_POST['submit'])){
 
 
   //!Puts user data in database if their are no errors
-  if(!empty(mixed $errors)){
+  if(!empty($errors)){
     //! Inserting each string into database
     $email = mysqli_real_escape_string($conn, $_POST['Email']);
      $password = mysqli_real_escape_string($conn, $_POST['Password']);
