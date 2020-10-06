@@ -3,7 +3,7 @@ include('connect.php');
 //!saves errors
 $errors =array('Email'=>'','Password'=>'','LastName'=>'','FirstName'=>'','Age'=>'','SocialSecurity'=>'','Address1'=>'','Address2'=>'');
 //!saves users input when submit is clicked
-$Email = $password = $LastName = $FirstName = $Age = $SocialSecurity = $Address1 = $address2 = '';
+$Email = $Password = $LastName = $FirstName = $Age = $SocialSecurity = $Address1 = $Address2 = '';
 
 if(isset($_POST['submit'])){
   if (empty($_POST['Email'])) {
@@ -20,8 +20,8 @@ if(isset($_POST['submit'])){
   if (empty($_POST['Password'])) {
     $errors[1] = "Password is required";
   }else {
-    $password=$_POST['Password'];
-    if(preg_match($password,'/^[a-zA-Z1-9]{9,255}$/')){
+    $Password=$_POST['Password'];
+    if(preg_match($Password,'/^[a-zA-Z1-9]{9,255}$/')){
     $errors[1] =  " Enter a valid password with a lenth of above 9 and no special characters";
   }
   }
@@ -76,9 +76,30 @@ if(isset($_POST['submit'])){
   }
 
   //!vaild Address2 check
-  if (!empty($_POST['Address2']) and !preg_match($address2,'/^[a-zA-Z1-9]{9,255}$/')) {
-    //!$Address2=$_POST['Address2'];
+  if (!empty($_POST['Address2']) and !preg_match($Address2,'/^[a-zA-Z1-9]{9,255}$/')) {
+    $Address2=$_POST['Address2'];
     $errors[7] =  " Enter a valid Address2 with a lenth of above 9 and no special characters";
+  }
+
+
+  //!Puts user data in database if their are no errors
+  if(!empty(mixed $errors)){
+    //! Inserting each string into database
+    $email = mysqli_real_escape_string($conn, $_POST['Email']);
+     $password = mysqli_real_escape_string($conn, $_POST['Password']);
+     $LastName = mysqli_real_escape_string($conn, $_POST['LastName']);
+     $FirstName = mysqli_real_escape_string($conn, $_POST['FirstName']);
+     $Age = mysqli_real_escape_string($conn, $_POST['Age']);
+     $SocialSecurity = mysqli_real_escape_string($conn, $_POST['SocialSecurity']);
+     $Address1 = mysqli_real_escape_string($conn, $_POST['Address1']);
+     $address2 = mysqli_real_escape_string($conn, $_POST['Address2']);
+     $sql = "INSERT INTO BANKING(Email, Password, LastName, FirstName, SocialSecurity, Address1, Address2)
+            VALUES("$Email" = "$Password", "$LastName", "$FirstName", "$Age", "$SocialSecurity", "$Address1", "$address2")";
+     if(mysqli_query($conn,$sql)){
+       echo "Hell yha";
+     }else{
+       echo "sql error ".mysqli_error($conn);
+     }
   }
 }
 ?>
@@ -92,35 +113,35 @@ if(isset($_POST['submit'])){
     <section>
       <h4 class="center"></h4>
       <form class="" action="NewUser.php" method="post">
-        //gets Email
+        //!gets Email
         <label for="">Enter Your Email:</label><br>
         <input type="text" name="Email" value=><br>
         <div class="red-text"><?php echo $errors[Email]; ?></div>
-        //gets Password
+        //!gets Password
         <label for="">Password:</label><br>
         <input type="password" name="Password" value="Password123"><br>
         <div class="red-text"><?php echo $errors[Password]; ?></div>
-        //get LastName
+        //!get LastName
         <label for="">Last name:</label><br>
         <input type="text" id="LastName" name="LastName" value="Brad"><br>
         <div class="red-text"><?php echo $errors[LastName]; ?></div>
-        //get FirstName
+        //!get FirstName
         <label for="">First name:</label><br>
         <input type="text" id="FirstName" name="FirstName" value="Beth"><br>
         <div class="red-text"><?php echo $errors[FirstName]; ?></div>
-        //get Age
+        //!get Age
         <label for="">Age</label><br>
         <input type="number" name="Age" value="Age"><br>
         <div class="red-text"><?php echo $errors[Age]; ?></div>
-        //get SocialSecurity
+        //!get SocialSecurity
         <label for="">Social Security:</label><br>
         <input type="text" name="SocialSecurity" value="SocialSecurity"><br>
         <div class="red-text"><?php echo $errors[SocialSecurity]; ?></div>
-        //get Address1
+        //!get Address1
         <label for="">Address1:</label><br>
         <input type="text" name="Address1" value="Address1"><br>
         <div class="red-text"><?php echo $errors["Address1"]; ?></div>
-        //get address2
+        //!get address2
         <label for="">Address2:</label><br>
         <input type="text" name="Address2" value="Address2"><br>
         <div class="red-text"><?php echo $errors["Address2"]; ?></div>
