@@ -114,49 +114,49 @@ if(isset($_POST['submit'])){
       <h4 class="center"></h4>
       <form class="" action="NewUser.php" method="post">
 
-        <!--gets Email--!>
+        <!--gets Email-->
         <label for="">Enter Your Email:</label><br>
-        <input type="text" name="Email" value=><br>
+        <input type="text" name="Email" value=$Email><br>
         <div class="red-text"><?php echo $errors[Email]; ?></div>
-        
-	<!--gets Password--!>
+
+	<!--gets Password-->
         <label for="">Password:</label><br>
-        <input type="password" name="Password"><br>
+        <input type="password" name=$Password><br>
         <div class="red-text"><?php echo $errors[Password]; ?></div>
-        
-	<!--get LastName--!>
+
+	<!--get LastName-->
         <label for="">Last name:</label><br>
-        <input type="text" id="LastName" name="LastName" ><br>
+        <input type="text" id="LastName" name=$LastName ><br>
         <div class="red-text"><?php echo $errors[LastName]; ?></div>
-        
-	<!--get FirstName--!>
+
+	<!--get FirstName-->
         <label for="">First name:</label><br>
-        <input type="text" id="FirstName" name="FirstName"><br>
+        <input type="text" id="FirstName" name="FirstName" value=$FirstName><br>
         <div class="red-text"><?php echo $errors[FirstName]; ?></div>
-        
-	<!--get Age--!>
+
+	<!--get Age-->
 	<label for="">Age</label><br>
-        <input type="number" name="Age" value="Age"><br>
+        <input type="number" name="Age" value=$Age><br>
         <div class="red-text"><?php echo $errors[Age]; ?></div>
-        
-	<!--get SocialSecurity--!>
+
+	<!--get SocialSecurity-->
         <label for="">Social Security:</label><br>
-        <input type="text" name="SocialSecurity" value="SocialSecurity"><br>
+        <input type="text" name="SocialSecurity" value=$SocialSecurity><br>
         <div class="red-text"><?php echo $errors[SocialSecurity]; ?></div>
 
-        <!--get address1--!>
+        <!--get address1-->
         <label for="">Address1:</label><br>
-        <input type="text" name="Address1" value="Address1"><br>
+        <input type="text" name="Address1" value=$Address1><br>
         <div class="red-text"><?php echo $errors["Address1"]; ?></div>
 
-        
-	<!--get address2--!>
+
+	<!--get address2-->
         <label for="">Address2:</label><br>
-        <input type="text" name="Address2" value="Address2"><br>
+        <input type="text" name="Address2" value= $Address2><br>
         <div class="red-text"><?php echo $errors["Address2"]; ?></div>
 
 
-        <input type="text" name="" value="">
+        <input type="text" name="" value=""
         <div class="center">
           <input type="submit" name="submit" value="submit">
         </div>
