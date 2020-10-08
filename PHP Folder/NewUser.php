@@ -116,43 +116,43 @@ if(isset($_POST['submit'])){
 
   <!--gets Email-->
         <label for="">Enter Your Email:</label><br>
-        <input type="text" name="Email" value= $Email><br>
+        <input type="text" name="Email" value= <?php echo $Email ?>><br>
         <div class="red-text"><?php echo $errors['Email']; ?></div>
 
 	<!--gets Password-->
         <label for="">Password:</label><br>
-        <input type="text" name="Password"><br>
+        <input type="text" name="Password" value= <?php echo $Password ?>><br>
         <div class="red-text"><?php echo $errors['Password']; ?></div>
 
 	<!--get LastName-->
         <label for="">Last name:</label><br>
-        <input type="text" name="LastName" name='LastName' ><br>
+        <input type="text" name="LastName" name='LastName'  value= <?php echo $LastName ?>><br>
         <div class="red-text"><?php echo $errors['LastName']; ?></div>
 
 	<!--get FirstName-->
         <label for="">First name:</label><br>
-        <input type="text"  name="FirstName" value=$FirstName><br>
+        <input type="text"  name="FirstName" value= <?php echo $FirstName ?>>><br>
         <div class="red-text"><?php echo $errors['FirstName']; ?></div>
 
 	<!--get Age-->
 	<label for="">Age</label><br>
-        <input type="number" name="Age" value=$Age><br>
+        <input type="number" name="Age" value= <?php echo $Age ?>>><br>
         <div class="red-text"><?php echo $errors['Age']; ?></div>
 
 	<!--get SocialSecurity-->
         <label for="">Social Security:</label><br>
-        <input type="text" name="SocialSecurity" value=$SocialSecurity><br>
+        <input type="text" name="SocialSecurity" value= <?php echo $SocialSecurity ?>>><br>
         <div class="red-text"><?php echo $errors['SocialSecurity']; ?></div>
 
         <!--get address1-->
         <label for="">Address1:</label><br>
-        <input type="text" name="Address1" value=$Address1><br>
+        <input type="text" name="Address1" value= <?php echo $Address1 ?>>><br>
         <div class="red-text"><?php echo $errors['Address1']; ?></div>
 
 
 	<!--get address2-->
         <label for="">Address2:</label><br>
-        <input type="text" name="Address2" value= $Address2><br>
+        <input type="text" name="Address2" value= <?php echo $Address2 ?>>><br>
         <div class="red-text"><?php echo $errors['Address2']; ?></div>
 
           <input input = "submit" type="submit" name="submit" value="submit">
