@@ -76,10 +76,13 @@ if(isset($_POST['submit'])){
   }
 
   //!vaild Address2 check
-  if (!empty($_POST['Address2']) and !preg_match('/^[a-zA-Z1-9\s]{9,255}$/',$Address2)) {
-    $Address2=$_POST['Address2'];
-    $errors['Address2'] =  " Enter a valid Address2 with a lenth of above 9 and no special characters";
+    if (!empty($_POST['Address2'])){
+      $Address2=$_POST['Address2'];
+      if(!preg_match('/^[a-zA-Z1-9]{1,255}$/', $Address2)){
+        $errors['Address2'] =  " Enter a valid Address1 with a lenth of above 1 and no special chachars or space";
+      }
   }
+
 
 
   //!Puts user data in database if their are no errors
@@ -121,7 +124,7 @@ if(isset($_POST['submit'])){
 
 	<!--gets Password-->
         <label for="">Password:</label><br>
-        <input type="text" name="Password" value= <?php echo $Password ?>><br>
+        <input type="password" name="Password" value= <?php echo $Password ?>><br>
         <div class="red-text"><?php echo $errors['Password']; ?></div>
 
 	<!--get LastName-->
@@ -141,7 +144,7 @@ if(isset($_POST['submit'])){
 
 	<!--get SocialSecurity-->
         <label for="">Social Security:</label><br>
-        <input type="text" name="SocialSecurity" value= <?php echo $SocialSecurity ?>>><br>
+        <input type="number" name="SocialSecurity" value= <?php echo $SocialSecurity ?>>><br>
         <div class="red-text"><?php echo $errors['SocialSecurity']; ?></div>
 
         <!--get address1-->
