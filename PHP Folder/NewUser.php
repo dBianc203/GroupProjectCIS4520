@@ -29,5 +29,5 @@ include('error_check.php');
   }
 }
 $conn-->close();
-include('..\Html Folder\NewUser.html');
+include('..\Html%Folder\NewUser.html');
 ?>
