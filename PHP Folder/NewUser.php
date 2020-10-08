@@ -9,9 +9,9 @@ if(isset($_POST['submit'])){
   if (empty($_POST['Email'])) {
     $errors['Email'] = "Email is required";
   }else {
-    $email = $_POST['Email'];
+    $Email = $_POST['Email'];
     //!vaild email check
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
       $errors['Email'] =  "Email must be valid";
     }
   }
@@ -86,7 +86,7 @@ if(isset($_POST['submit'])){
 
 
   //!Puts user data in database if their are no errors
-  if(empty($errors)){
+  if(array_filter($errors)){
     //! Inserting each string into database
     $email = mysqli_real_escape_string($conn, $_POST['Email']);
      $password = mysqli_real_escape_string($conn, $_POST['Password']);
@@ -134,7 +134,7 @@ if(isset($_POST['submit'])){
 
 	<!--get FirstName-->
         <label for="">First name:</label><br>
-        <input type="text"  name="FirstName" value= <?php echo $FirstName ?>>><br>
+        <input type="text"  name="FirstName" value= <?php echo $FirstName ?>><br>
         <div class="red-text"><?php echo $errors['FirstName']; ?></div>
 
 	<!--get Age-->
@@ -144,18 +144,18 @@ if(isset($_POST['submit'])){
 
 	<!--get SocialSecurity-->
         <label for="">Social Security:</label><br>
-        <input type="number" name="SocialSecurity" value= <?php echo $SocialSecurity ?>>><br>
+        <input type="number" name="SocialSecurity" value= <?php echo $SocialSecurity ?>><br>
         <div class="red-text"><?php echo $errors['SocialSecurity']; ?></div>
 
         <!--get address1-->
         <label for="">Address1:</label><br>
-        <input type="text" name="Address1" value= <?php echo $Address1 ?>>><br>
+        <input type="text" name="Address1" value= <?php echo $Address1 ?>><br>
         <div class="red-text"><?php echo $errors['Address1']; ?></div>
 
 
 	<!--get address2-->
         <label for="">Address2:</label><br>
-        <input type="text" name="Address2" value= <?php echo $Address2 ?>>><br>
+        <input type="text" name="Address2" value= <?php echo $Address2 ?>><br>
         <div class="red-text"><?php echo $errors['Address2']; ?></div>
 
           <input input = "submit" type="submit" name="submit" value="submit">
