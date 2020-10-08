@@ -7,78 +7,78 @@ $Email = $Password = $LastName = $FirstName = $Age = $SocialSecurity = $Address1
 
 if(isset($_POST['submit'])){
   if (empty($_POST['Email'])) {
-    //!$errors[0] = "Email is required";
+    $errors['Email'] = "Email is required";
   }else {
     $email = $_POST['Email'];
     //!vaild email check
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $errors[0] =  "Email must be valid";
+      $errors['Email'] =  "Email must be valid";
     }
   }
 
   //!vaild Password check
   if (empty($_POST['Password'])) {
-    $errors[1] = "Password is required";
+    $errors['Password'] = "Password is required";
   }else {
     $Password=$_POST['Password'];
     if(preg_match($Password,'/^[a-zA-Z1-9]{9,255}$/')){
-    $errors[1] =  " Enter a valid password with a lenth of above 9 and no special characters";
+    $errors['Password'] =  " Enter a valid password with a lenth of above 9 and no special characters";
   }
   }
   //!vaild LastName check
   if (empty($_POST['LastName'])) {
-    $errors[2] = "Last Name is required";
+    $errors['LastName'] = "Last Name is required";
   }else {
     $LastName=$_POST['LastName'];
     if(!preg_match($LastName,'/^[a-zA-Z1-9]{1,255}$/')){
-  $errors[2] =  " Enter a valid Last Name with no special characters";
+  $errors['LastName'] =  " Enter a valid Last Name with no special characters";
   }
 }
 
   //!vaild FirstName
   if (empty($_POST['FirstName'])) {
-    $errors[3] =  "Last Name is required";
+    $errors['FirstName'] =  "Last Name is required";
   }else {
     $FirstName=$_POST['FirstName'];
     if(!preg_match($LastName,'/^[a-zA-Z1-9]{1,255}$/')){
-    $errors[3] =  " Enter a valid First Name with no special characters";
+    $errors['FirstName'] =  " Enter a valid First Name with no special characters";
   }
   }
 
   //!vaild Age check
   if (empty($_POST['Age'])) {
-    $errors[4] =  "Age is required";
+    $errors['Age'] =  "Age is required";
   }else {
     $Age=$_POST['Age'];
     if(!preg_match($Age,'/^[1]?[1-9][1-9]$/')){
-    $errors[4] =  " Enter a valid Age";
+    $errors['Age'] =  " Enter a valid Age";
   }
   }
 
   //!vaild SocialSecurity check
   if (empty($_POST['SocialSecurity'])) {
-    $errors[5] =  "Social Security is required";
+    $errors['SocialSecurity'] =  "Social Security is required";
   }else {
     $SocialSecurity=$_POST['SocialSecurity'];
     if(!preg_match($SocialSecurity,'/^[a-zA-Z1-9]{9,255}$/')){
-    $errors[5] =  " Enter a valid Social Security with a lenth of above 9 and no special characters";
+    $errors['SocialSecurity'] =  " Enter a valid Social Security with a lenth of above 9 and no special characters";
   }
   }
 
   //!vaild Address1 check
   if (empty($_POST['Address1'])) {
-    $errors[6] =  "Address1 is required";
+    $errors['Address1'] =  "Address1 is required";
   }else {
     $Address1=$_POST['Address1'];
     if(!preg_match($Address1,'/^[a-zA-Z1-9]{9,255}$/')){
-    $errors[6] =  " Enter a valid Address1 with a lenth of above 9 and no special characters";
+    $errors['Address1'] =  " Enter a valid Address1 with a lenth of above 9 and no special characters";
   }
   }
 
   //!vaild Address2 check
   if (!empty($_POST['Address2']) and !preg_match($Address2,'/^[a-zA-Z1-9]{9,255}$/')) {
     $Address2=$_POST['Address2'];
-    $errors[7] =  " Enter a valid Address2 with a lenth of above 9 and no special characters";
+    $errors['Address2'] =  " Enter a valid Address2 with a lenth of above 9 and no special characters";
   }
 
 
@@ -116,44 +116,44 @@ if(isset($_POST['submit'])){
 
         <!--gets Email-->
         <label for="">Enter Your Email:</label><br>
-        <input type="text" name="Email" value=$Email><br>
-        <div class="red-text"><?php echo $errors[Email]; ?></div>
+        <input type="text" name="Email" value= $Email><br>
+        <div class="red-text"><?php echo $errors['Email']; ?></div>
 
 	<!--gets Password-->
         <label for="">Password:</label><br>
         <input type="password" name=$Password><br>
-        <div class="red-text"><?php echo $errors[Password]; ?></div>
+        <div class="red-text"><?php echo $errors['Password']; ?></div>
 
 	<!--get LastName-->
         <label for="">Last name:</label><br>
         <input type="text" id="LastName" name=$LastName ><br>
-        <div class="red-text"><?php echo $errors[LastName]; ?></div>
+        <div class="red-text"><?php echo $errors['LastName']; ?></div>
 
 	<!--get FirstName-->
         <label for="">First name:</label><br>
         <input type="text" id="FirstName" name="FirstName" value=$FirstName><br>
-        <div class="red-text"><?php echo $errors[FirstName]; ?></div>
+        <div class="red-text"><?php echo $errors['FirstName']; ?></div>
 
 	<!--get Age-->
 	<label for="">Age</label><br>
         <input type="number" name="Age" value=$Age><br>
-        <div class="red-text"><?php echo $errors[Age]; ?></div>
+        <div class="red-text"><?php echo $errors['Age']; ?></div>
 
 	<!--get SocialSecurity-->
         <label for="">Social Security:</label><br>
         <input type="text" name="SocialSecurity" value=$SocialSecurity><br>
-        <div class="red-text"><?php echo $errors[SocialSecurity]; ?></div>
+        <div class="red-text"><?php echo $errors['SocialSecurity']; ?></div>
 
         <!--get address1-->
         <label for="">Address1:</label><br>
         <input type="text" name="Address1" value=$Address1><br>
-        <div class="red-text"><?php echo $errors["Address1"]; ?></div>
+        <div class="red-text"><?php echo $errors['Address1']; ?></div>
 
 
 	<!--get address2-->
         <label for="">Address2:</label><br>
         <input type="text" name="Address2" value= $Address2><br>
-        <div class="red-text"><?php echo $errors["Address2"]; ?></div>
+        <div class="red-text"><?php echo $errors['Address2']; ?></div>
 
 
         <input type="text" name="" value=""
