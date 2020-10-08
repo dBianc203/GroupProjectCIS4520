@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     $errors['Password'] = "Password is required";
   }else {
     $Password=$_POST['Password'];
-    if(preg_match('/^[a-zA-Z1-9]{9,255}$/',$Password)){
+    if(!preg_match('/^[a-zA-Z1-9]{9,255}$/',$Password)){
     $errors['Password'] =  " Enter a valid password with a lenth of above 9 and no special characters";
   }
   }
@@ -70,13 +70,13 @@ if(isset($_POST['submit'])){
     $errors['Address1'] =  "Address1 is required";
   }else {
     $Address1=$_POST['Address1'];
-    if(!preg_match('/^[a-zA-Z1-9]{9,255}$/', $Address1)){
+    if(!preg_match('/^[a-zA-Z1-9\s]{1,255}$/', $Address1)){
     $errors['Address1'] =  " Enter a valid Address1 with a lenth of above 9 and no special characters";
   }
   }
 
   //!vaild Address2 check
-  if (!empty($_POST['Address2']) and !preg_match('/^[a-zA-Z1-9]{9,255}$/',$Address2)) {
+  if (!empty($_POST['Address2']) and !preg_match('/^[a-zA-Z1-9\s]{9,255}$/',$Address2)) {
     $Address2=$_POST['Address2'];
     $errors['Address2'] =  " Enter a valid Address2 with a lenth of above 9 and no special characters";
   }
