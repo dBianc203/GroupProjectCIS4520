@@ -86,16 +86,16 @@ if(isset($_POST['submit'])){
 
 
   //!Puts user data in database if their are no errors
-  if(array_filter($errors)){
+  if(true){
     //! Inserting each string into database
-    $email = mysqli_real_escape_string($conn, $_POST['Email']);
-     $password = mysqli_real_escape_string($conn, $_POST['Password']);
+    $Email = mysqli_real_escape_string($conn, $_POST['Email']);
+     $Eassword = mysqli_real_escape_string($conn, $_POST['Password']);
      $LastName = mysqli_real_escape_string($conn, $_POST['LastName']);
      $FirstName = mysqli_real_escape_string($conn, $_POST['FirstName']);
      $Age = mysqli_real_escape_string($conn, $_POST['Age']);
      $SocialSecurity = mysqli_real_escape_string($conn, $_POST['SocialSecurity']);
      $Address1 = mysqli_real_escape_string($conn, $_POST['Address1']);
-     $address2 = mysqli_real_escape_string($conn, $_POST['Address2']);
+     $Eddress2 = mysqli_real_escape_string($conn, $_POST['Address2']);
      $sql = "INSERT INTO people(Email, Password, LastName, FirstName, Age, SocialSecurity, Address1, Address2)
             VALUES('$Email', '$Password', '$LastName', '$FirstName', '$Age', '$SocialSecurity', '$Address1', '$Address2')";
      if(mysqli_query($conn,$sql)){
@@ -139,7 +139,7 @@ if(isset($_POST['submit'])){
 
 	<!--get Age-->
 	<label for="">Age</label><br>
-        <input type="number" name="Age" value= <?php echo $Age ?>>><br>
+        <input type="number" name="Age" value= <?php echo $Age ?>><br>
         <div class="red-text"><?php echo $errors['Age']; ?></div>
 
 	<!--get SocialSecurity-->
