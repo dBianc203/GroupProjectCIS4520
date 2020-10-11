@@ -2,21 +2,25 @@
 <html>
 <head>
 <link rel="stylesheet" href="CSS Folder/Withdraw&DepositAmount.css">
+
+
+
 </head>
 <body>
   <div class="Question">
  How Much Would You like to Withdraw?
 </div>
 <div class="btn-group1">
-  <a href="SuccWithFromCheck.html"><button>20</button>
-  <a href="SuccWithFromCheck.html"><button>40</button>
-  <a href="SuccWithFromCheck.html"><button>60</button>
+  <form action="http://localhost/SuccWithFromCheck.php" method="post">
+  <button name="WithAmount" type="number" value="20" >20</button>
+  <button name="WithAmount" type="number" value="40" >40</button>
+  <button name="WithAmount" type="number" value="60" >60</button>
   </div>
 <div class="btn-group2">
-  <a href="SuccWithFromCheck.html"><button>100</button>
-  <a href="SuccWithFromCheck.html"><button>200</button>
-  <a href="SuccWithFromCheck.html"><button>300</button>
+  <button name="WithAmount" type="number" value="100" >100</button>
+  <button name="WithAmount" type="number" value="200" >200</button>
+  <button name="WithAmount" type="number" value="300" >300</button>
 </div>
-
+</form>
 </body>
 </html>
