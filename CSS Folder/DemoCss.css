@@ -1,0 +1,95 @@
+body {
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.income,
+.costs {
+    display: none;
+}
+
+.calculate {
+    margin: 20px 0px;
+    display: block;
+}
+
+* {
+    font-family: Arial;
+}
+
+a {
+    border: 1px solid #999999;
+    padding: 8px 20px;
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 30px;
+    background: green;
+    color: white
+}
+
+.additional-income,
+.additional-costs {
+    padding: 0px 20px;
+}
+
+label {
+    width: 150px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 12px;
+    margin: 0px;
+}
+
+input {
+    margin: 8px 10px 0px 0px;
+    padding: 2px;
+    box-sizing: border-box;
+    width: 150px;
+    display: inline-block;
+}
+
+span {
+    display: inline-block;
+    width: 50px;
+    margin-left: 8px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.total {
+    display: none;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background: #FFFFFF;
+    padding: 50px;
+    text-align: center;
+    color: #000000;
+}
+
+.close {
+    font-size: 20px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+}
+
+.green,
+.red {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
