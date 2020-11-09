@@ -1,6 +1,6 @@
 var labelOnj = '<label></label>';
-var inputObj = '<input type="text" class="default" placeholder="e.g.100, 1000, 10000" />';
-var inputCostObj = '<input type="text" class="cost-type" placeholder="e.g. Food, Fuel, Rent" />';
+var inputObj = '<input type="text" class="default" placeholder="ex) 50, 100, 1000" />';
+var inputCostObj = '<input type="text" class="cost-type" placeholder="e.g. Food, Rent, Bills" />';
 var removeObj = '<span>Remove</span>'
 var incomeObj = $('.additional-income');
 var costObj = $('.additional-costs');
@@ -82,8 +82,6 @@ $(".total").click(function() {
     $(this).hide();
 });
 
-// income functions
-////////////////////////////////////////////////////////////////
 
 function addIncomeText() {
     i = 1;
@@ -111,9 +109,6 @@ function addRemoveIncomeClass() {
         i++;
     });
 }
-
-// cost functions
-////////////////////////////////////////////////////////////////
 
 function addInputCostClass() {
     i = 1;
