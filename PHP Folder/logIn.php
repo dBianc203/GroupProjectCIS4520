@@ -33,6 +33,7 @@ if(isset($_POST['submit'])){
  ?>
  <!DOCTYPE html>
  <html>
+   <title> Login Page </title>
  <style>
 
      form {
