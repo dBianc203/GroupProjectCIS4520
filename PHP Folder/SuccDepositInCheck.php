@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title> Successful Deposit </title>
   <link rel="stylesheet" href="CSS Folder\Successful.css">
 </head>
 <body>
