@@ -74,24 +74,24 @@ if(isset($_POST['submit'])){
 
 
 
-         </div>
+   </div>
+<form  class="" action="login.php" method="post">
+   <div class="container">
+     <!--gets Email-->
+     <label for="">Enter Your Email:</label><br>
+     <input type="text" name="Email" value= <?php echo $Email ?>><br>
+     <div class="red-text"><?php echo $errors['Email']; ?></div>
 
-         <div class="container">
-           <!--gets Email-->
-           <label for="">Enter Your Email:</label><br>
-           <input type="text" name="Email" value= <?php echo $Email ?>><br>
-           <div class="red-text"><?php echo $errors['Email']; ?></div>
+     <!--gets Password-->
+     <label for="">Password:</label><br>
+     <input type="password" name="Password" value= <?php echo $Password ?>><br>
+     <div class="red-text"><?php echo $errors['Password']; ?></div>
 
-           <!--gets Password-->
-           <label for="">Password:</label><br>
-           <input type="password" name="Password" value= <?php echo $Password ?>><br>
-           <div class="red-text"><?php echo $errors['Password']; ?></div>
+     <a href=""><button type="submit">Login</button>
+     <a href="NewUser.php"><button type="submit">New User</button>
+<input input = "submit" type="submit" name="submit" value="submit">
+</form>
 
-             <a href="ATMChoices.html"><button type="submit">Login</button>
-               <a href="NewUser.php"><button type="submit">New User</button>
+</body>
 
-
-
- </body>
-
- </html>
+</html>
