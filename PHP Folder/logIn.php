@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
   if(!$errorBool){
     //! Inserting each string into database
     $Email = mysqli_real_escape_string($conn, $_POST['Email']);
-    $Eassword = mysqli_real_escape_string($conn, $_POST['Password']);
+    $Password = mysqli_real_escape_string($conn, $_POST['Password']);
     //! querys server and sets it to a 2darray
      $sql = "SELECT Email, Password, ID FROM people WHERE Email=$Email AND Password=$Password";
      //!error check
