@@ -1,7 +1,6 @@
 <?php
-include('connect.php');
-
- ?>
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -28,14 +27,14 @@ include('connect.php');
   border-bottom: none;
 }
 
-/
+
 .btn-group button:hover {
   background-color: #3e8e41;
 }
 </style>
 <body>
   <div class="Question">
-  Here is the balance for your savings account. <?php echo number_format ($_POST["SavingBalance"]); ?>
+  <?php echo 'Saving Account Balance :' .$_SESSION["SavingsAccount"].'<br>'; ?>
 </div>
 <div class="btn-group">
   <a href="ATM Front page.html"><button>Back to main menu</button>

@@ -1,6 +1,5 @@
 <?php
-include('connect.php');
-
+session_start();
  ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +34,7 @@ include('connect.php');
 </style>
 <body>
   <div class="Question">
-  Here is the balance for your checking account. <?php echo number_format ($_POST["CheckingBalance"]); ?>
+  <?php echo 'Checking Account Balance :' .$_SESSION["CheckingAccount"].'<br>'; ?>
 </div>
 <div class="btn-group">
   <a href="ATM Front page.html"><button>Back to main menu</button>
