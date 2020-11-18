@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +9,7 @@ session_start();
 </head>
 <body>
   <div class="Question">
-    You successfully deposited <?php echo number_format($_POST["DepoAmount"]); ?> into your savings account
+    You successfully deposited $<?php echo number_format($_POST["DepoAmount"]); ?> into your savings account
 
 <?php 				
  $first_number = $_POST["DepoAmount"];
@@ -19,7 +18,7 @@ session_start();
  
  
  $new_balance = (($Background_number)+($first_number));
- echo 'Your new balance is ';
+ echo 'Your new balance is $';
  print ($new_balance);
  $_SESSION["SavingsAccount"] = ($new_balance);
 

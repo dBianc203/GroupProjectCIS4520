@@ -9,7 +9,7 @@ session_start();
 </head>
 <body>
   <div class="Question">
-You successfully deposited <?php echo number_format($_POST["DepoAmount"]); ?> into your checking account
+You successfully deposited $<?php echo number_format($_POST["DepoAmount"]); ?> into your checking account
 <?php 				
  $first_number = $_POST["DepoAmount"];
 
@@ -17,7 +17,7 @@ You successfully deposited <?php echo number_format($_POST["DepoAmount"]); ?> in
  
  
  $new_balance = (($Background_number)+($first_number));
- echo 'Your new balance is ';
+ echo 'Your new balance is $';
  print ($new_balance);
  $_SESSION["CheckingAccount"] = ($new_balance);
 

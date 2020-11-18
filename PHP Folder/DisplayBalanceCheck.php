@@ -34,7 +34,7 @@ session_start();
 </style>
 <body>
   <div class="Question">
-  <?php echo 'Checking Account Balance :' .$_SESSION["CheckingAccount"].'<br>'; ?>
+  <?php echo 'Checking Account Balance: $' .$_SESSION["CheckingAccount"].'<br>'; ?>
 </div>
 <div class="btn-group">
   <a href="ATM Front page.html"><button>Back to main menu</button>

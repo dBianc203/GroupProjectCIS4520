@@ -9,10 +9,8 @@ session_start();
 </head>
 <body>
   <div class="Question">
-    You successfully withdrew <?php echo number_format($_POST["WithAmount"]); ?> from your savings account
+    You successfully withdrew $<?php echo number_format($_POST["WithAmount"]); ?> from your savings account
     
-
-</div>
 <?php 				
  $first_number = $_POST["WithAmount"];
 
@@ -20,11 +18,12 @@ session_start();
  
  
  $new_balance = (($Background_number)-($first_number));
- echo 'Your new balance is ';
+ echo 'Your new balance is $';
  print ($new_balance);
  $_SESSION["SavingsAccount"] = ($new_balance);
 
 	?>
+</div>
 <div class="btn-group1">
   <a href="ATM Front page.html"><button>Continue to main screen</button>
 
