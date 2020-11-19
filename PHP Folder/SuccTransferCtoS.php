@@ -18,11 +18,15 @@ session_start()
  $second_number = $_SESSION["SavingsAccount"];
  
  $Background_number = $_SESSION["CheckingAccount"];
-  if ($Background_number < 20){
+  if ($Background_number < first_number){
 	 echo 'You failed to transfer account balances(negative balance will occur)';
  }
  else {
  $Background_balance = (($Background_number)-($first_number));
+    if ($Background_balance < 0)
+ {
+	 $Background_balance = 0;
+ }
  
  $new_balance = (($second_number)+($first_number));
  echo 'Your new balance is ';

@@ -14,7 +14,7 @@ session_start();
  $first_number = $_POST["WithAmount"];
 
  $Background_number = $_SESSION["CheckingAccount"];
- if ($Background_number < 20){
+ if ($Background_number < $first_number){
 	 echo 'You failed to withdraw from this account (negative balance will occur)';
  }
  else {
