@@ -16,7 +16,7 @@ URL to webpage that isnt connected to database that holds usernames and password
 - You can download XAMPP at https://www.apachefriends.org/download.html
 - after the program is installed, you need to locate the htdocs folder inside the xampp folder(where you installed it) 
 - once you find the htdocs folder, place all of the html files in the html folder of our project, along with the PHP files of our project, into the htdocs folder. Along with the css folder (SHOULD LOOK LIKE THIS)
-
+![Image of Yaktocat](https://dBianc203.github.com/GroupProjectCIS4520/tut p2.jpg)
 
 - you can open the control panel and start Apache.
 - type https://localhost/LoginPage.html
