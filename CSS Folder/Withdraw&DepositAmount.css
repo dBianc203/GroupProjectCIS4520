@@ -1,35 +1,30 @@
 .btn-group1 button {
-  background-color: #4CAF50;
-  border: 3px solid green;
+  background-color: green;
+  border: 3px solid #999999;
+  border-radius: 5px;
   color: white;
-  padding: 10px 24px;
+  margin: 8px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
   cursor: pointer;
-  width: 30%;
-  display: block;
-  height: 100px;
-  position: relative;
-  margin: 5px;
-  top: 200px;
-  left: 350px;
+  width: 100%;
 }
 .btn-group2 button {
-  background-color: #4CAF50;
-  border: 3px solid green;
+  background-color: green;
+  border: 3px solid #999999;
+  border-radius: 5px;
   color: white;
-  padding: 10px 24px;
+  margin: 8px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
   cursor: pointer;
-  width: 30%;
-  display: block;
-  height: 100px;
-  position: relative;
-  margin: 5px;
-  bottom: 115px;
-  left: 1000px;
+  width: 100%;
 }
 .Question {
   position: relative;
-  top: 150px;
-  left: 825px;
+  text-align: center;
 }
 .btn-group button:not(:last-child) {
   border-bottom: none;
