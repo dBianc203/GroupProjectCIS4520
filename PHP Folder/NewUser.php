@@ -4,7 +4,7 @@ include('error_check.php');
 
 if(isset($_POST['submit'])){
   //!Puts user data in database if their are no errors
-  if($errors['Email']==""and$errors['Password']==""and$errors['LastName']==""and$errors['FirstName']==""and$errors['Age']==""and$errors['SocialSecurity']==""and$errors['Address1']==""){
+  if(!$errorBool){
     //! Inserting each string into database
     $Email = mysqli_real_escape_string($conn, $_POST['Email']);
      $Eassword = mysqli_real_escape_string($conn, $_POST['Password']);
