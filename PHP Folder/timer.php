@@ -1,11 +1,13 @@
 <?php
+include('connect.php');
 session_start();
 $sessionID=$_GET['$sessionID'];
-$sql = "SELECT  ID, endPT, startPT  FROM sechions where sessionID='$sessionID' ORDER BY startPT DESC";
+
+$sql = "SELECT  ID, endPT, startPT  FROM sessions where sessionID='$sessionID' ORDER BY startPT DESC";
 if(mysqli_query($conn,$sql)){
   $result = $conn->query($sql);
 
- if ($result->num_rows > 0) {
+ if($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
       $endPT=$row["endPT"];
       $startPT=$row["endPT"];
@@ -20,10 +22,14 @@ exit();
 }else {
   $sql = "INSERT INTO sessions(ID,endPT,startPT)
          VALUES($ID,ADDTIME(CAST(CURTIME() AS TIME),1800),CAST(CURTIME() AS TIME))";
-     }
-    } else {
+    }
+} else {
 echo "0 results";
-}
+  $_SESSION['sessionID']=$sessionID;
+  header("Location: logIn.php?sessionID=".$sessionID);
+exit();
+
+        }
 }else{
   echo "sql error ".mysqli_error($conn);
 }
