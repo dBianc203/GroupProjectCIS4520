@@ -9,24 +9,22 @@ session_start();
 </head>
 <body>
   <div class="Question">
-    You successfully deposited $<?php echo number_format($_POST["DepoAmount"]); ?> into your savings account
-
+    You attempted to deposit $<?php echo number_format($_POST["DepoAmount"]); ?> into your savings account
 <?php 				
  $first_number = $_POST["DepoAmount"];
-
- $Background_number = $_SESSION["SavingsAccount"];
- 
- 
+ if ($first_number > 300) {
+	echo "You can't deposit that amount, please go back and try again";
+}
+else{
+ $Background_number = $_SESSION["SavingsAccount"]; 
  $new_balance = (($Background_number)+($first_number));
  echo 'Your new balance is $';
  print ($new_balance);
  $_SESSION["SavingsAccount"] = ($new_balance);
-
-	?>
+}
+?>
 </div>
 <div class="btn-group1">
   <a href="ATM Front page.html"><button>Continue to main screen</button>
-
-
 </body>
 </html>
