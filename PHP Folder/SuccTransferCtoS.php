@@ -18,9 +18,15 @@ session_start()
  $second_number = $_SESSION["SavingsAccount"];
  
  $Background_number = $_SESSION["CheckingAccount"];
-  if ($Background_number < first_number){
+  if ($Background_number < $first_number){
 	 echo 'You failed to transfer account balances(negative balance will occur)';
  }
+  else if ($first_number > 300) {
+	echo "You can't transfer that amount, please go back and try again";
+}
+else if ($first_number < 0) {
+	echo "You can't transfer that amount, please go back and try again";
+}
  else {
  $Background_balance = (($Background_number)-($first_number));
     if ($Background_balance < 0)

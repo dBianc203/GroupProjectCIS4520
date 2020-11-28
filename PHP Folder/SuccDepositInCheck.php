@@ -15,6 +15,9 @@ You attempted to deposit $<?php echo number_format($_POST["DepoAmount"]); ?> int
  if ($first_number > 300) {
 	echo "You can't deposit that amount, please go back and try again";
 }
+else if ($first_number < 0) {
+	echo "You can't deposit that amount, please go back and try again";
+}
 else {
  $Background_number = $_SESSION["CheckingAccount"];
  $new_balance = (($Background_number)+($first_number));

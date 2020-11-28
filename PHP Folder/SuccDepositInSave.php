@@ -15,6 +15,9 @@ session_start();
  if ($first_number > 300) {
 	echo "You can't deposit that amount, please go back and try again";
 }
+else if ($first_number < 0) {
+	echo "You can't deposit that amount, please go back and try again";
+}
 else{
  $Background_number = $_SESSION["SavingsAccount"]; 
  $new_balance = (($Background_number)+($first_number));

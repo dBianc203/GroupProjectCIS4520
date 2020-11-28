@@ -18,6 +18,9 @@ session_start();
   else if ($first_number > 20) {
 	echo "You can't withdraw that amount, please go back and try again";
 }
+else if ($first_number < 0) {
+	echo "You can't deposit that amount, please go back and try again";
+}
  else {
  $new_balance = (($Background_number)-($first_number));
   if ($new_balance < 0)
