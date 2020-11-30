@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ session_start();
 <body>
   <div class="Question">
  You've successfully Transferred <?php echo number_format ($_POST["TransferAmount"]);?> from your savings to checking <br>
-  <?php 
+  <?php
  $first_number = $_POST["TransferAmount"];
  $second_number = $_SESSION["CheckingAccount"];
  $Background_number = $_SESSION["SavingsAccount"];
@@ -24,7 +24,7 @@ session_start();
 	 $Background_balance = 0;
  }
  $new_balance = (($second_number)+($first_number));
- 
+
  echo 'Your new balance is ';
  print ($new_balance);
  $_SESSION["CheckingAccount"] = ($new_balance);
@@ -33,7 +33,7 @@ session_start();
  ?>
 </div>
 <div class="btn-group1">
-  <a href="ATM Front page.html"><button>Continue to main screen</button>
+  <a href="ATM Front page.php?sessionID=.$sessionID"><button>Continue to main screen</button>
 
 
 </body>

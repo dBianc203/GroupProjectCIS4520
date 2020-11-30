@@ -17,7 +17,9 @@ if(isset($_POST['submit'])){
      $sql = "INSERT INTO people(Email, Password, LastName, FirstName, Age, SocialSecurity, Address1, Address2)
             VALUES('$Email', '$Password', '$LastName', '$FirstName', '$Age', '$SocialSecurity', '$Address1', '$Address2')";
      if(mysqli_query($conn,$sql)){
-       echo "Hell yha";
+       header("Location: ATMChoices.php");
+       exit();
+
      }else{
        echo "sql error ".mysqli_error($conn);
      }

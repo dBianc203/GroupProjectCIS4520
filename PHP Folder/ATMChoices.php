@@ -34,12 +34,10 @@ include('timer.php');
 }
 </style>
 <body>
-  <form  class="" action="ATMChoices.php" method="post">
 
 <div class="btn-group">
-  <button input = "submit" type="submit" name="submit" value="submit">Login</button>
-  <a href="Demo.html"><button>Budget Your Money</button>
-
+  <a href="WithdrawAmountCheck.php?sessionID=.$sessionID"><button>Checking</button>
+  <a href="WithdrawAmountSave.php?sessionID=.$sessionID"><button>Savings</button>
 </div>
 </form>
 </body>

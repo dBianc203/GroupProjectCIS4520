@@ -38,9 +38,9 @@ include('timer.php');
        <form action="http://localhost/SuccessfulWithdraw.php" method="post">
      <button name="QuickDraw" type="number" value="20" >Quick Withdraw From Checking</button>
    </form>
-     <a href="ATMChoices.html"><button>Exit</button>
+     <a href="ATMChoices.php?sessionID=.$sessionID"><button>Exit</button>
 
-     <a href="TransferChoice.html"><button>Transfer Balance</button>
+     <a href="TransferChoice.php?sessionID=.$sessionID"><button>Transfer Balance</button>
  </div>
 
  </body>

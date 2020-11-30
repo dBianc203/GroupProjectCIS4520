@@ -26,8 +26,8 @@ if(isset($_POST['submit'])){
 	 }
 
           $sql = "INSERT INTO sessions(ID,endPT,startPT)
-                 VALUES('$ID','ADDTIME(GETDATE(),1800)','GETDATE()')";
-
+                 VALUES('$ID',ADDTIME(NOW(),1800),NO())";
+                 
      $sql = "SELECT sessionID  FROM sechions WHERE ID='$ID'";
 
      while($row = $result->fetch_assoc()) {

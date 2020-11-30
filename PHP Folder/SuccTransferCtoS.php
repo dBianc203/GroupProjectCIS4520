@@ -11,12 +11,12 @@ session_start()
 <body>
   <div class="Question">
  You've attempted to Transfer <?php echo number_format ($_POST["TransferAmount"]);?> from your checking to savings. <br>
- <?php 
- 
+ <?php
+
  $first_number = $_POST["TransferAmount"];
- 
+
  $second_number = $_SESSION["SavingsAccount"];
- 
+
  $Background_number = $_SESSION["CheckingAccount"];
   if ($Background_number < first_number){
 	 echo 'You failed to transfer account balances(negative balance will occur)';
@@ -27,7 +27,7 @@ session_start()
  {
 	 $Background_balance = 0;
  }
- 
+
  $new_balance = (($second_number)+($first_number));
  echo 'Your new balance is ';
  print ($new_balance);
@@ -37,7 +37,7 @@ session_start()
  ?>
 </div>
 <div class="btn-group1">
-  <a href="ATM Front page.html"><button>Continue to main screen</button>
+  <a href="ATM Front page.php?sessionID=.$sessionID"><button>Continue to main screen</button>
 
 
 </body>

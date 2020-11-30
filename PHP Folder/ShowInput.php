@@ -8,7 +8,7 @@ echo 'Saving Account Balance :' .$_SESSION["SavingsAccount"].'<br>';
 
 ?>
 <html>
-<a href="ATMChoices.html"><button type="submit">Continue</button>
+<a href="ATMChoices.php?sessionID=.$sessionID"><button type="submit">Continue</button>
 
 
 </html>

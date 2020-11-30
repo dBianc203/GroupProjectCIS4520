@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ session_start();
   <div class="Question">
  You attempted to withdraw <?php echo number_format ($_POST["QuickDraw"]); ?> from your account <br>
 
- <?php 				
+ <?php
  $first_number = $_POST["QuickDraw"];
 
  $Background_number = $_SESSION["CheckingAccount"];
@@ -30,7 +30,7 @@ session_start();
 	?>
 </div>
 <div class="btn-group1">
-  <a href="ATM Front page.html"><button>Continue to main screen</button>
+  <a href="ATM Front page.php?sessionID=.$sessionID"><button>Continue to main screen</button>
 
 </body>
 </html>

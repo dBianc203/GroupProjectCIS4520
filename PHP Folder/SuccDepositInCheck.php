@@ -10,12 +10,12 @@ session_start();
 <body>
   <div class="Question">
 You successfully deposited $<?php echo number_format($_POST["DepoAmount"]); ?> into your checking account
-<?php 				
+<?php
  $first_number = $_POST["DepoAmount"];
 
  $Background_number = $_SESSION["CheckingAccount"];
- 
- 
+
+
  $new_balance = (($Background_number)+($first_number));
  echo 'Your new balance is $';
  print ($new_balance);
@@ -24,7 +24,7 @@ You successfully deposited $<?php echo number_format($_POST["DepoAmount"]); ?> i
 	?>
 </div>
 <div class="btn-group1">
-  <a href="ATM Front page.html"><button>Continue to main screen</button>
+  <a href="ATM Front page.php?sessionID=.$sessionID"><button>Continue to main screen</button>
 
 
 </body>
