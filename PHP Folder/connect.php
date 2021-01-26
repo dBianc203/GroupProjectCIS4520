@@ -1,11 +1,7 @@
 <?php
-//mysqli
-//connect
-$conn = mysqli_connect('localhost','Public','pa$$word207', 'BANKING');
-//connection checkdatef
-if(!$conn){
-  echo "connection error " . myspli_connect_error();
-} //else{ echo "All good";}
-
-
- ?>
+$conn = mysqli_connect("localhost","id15442803_devon","%D}5<fo|M|^i>R_<","id15442803_banking");
+if(!$conn)
+{
+    echo "Database connection failed...";
+}
+?>

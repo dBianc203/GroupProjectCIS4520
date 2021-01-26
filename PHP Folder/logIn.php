@@ -1,52 +1,36 @@
 <?php
-include('connect.php');
-include('error_check.php');
-session_start();
 
-//!Stores ID of the user so we can index on the ID and not have to deal with the email anymore when looking up transachions;
-$ID=0;
+$host="localhost";
+$user="id15442803_devon";
+$password="%D}5<fo|M|^i>R_<";
+$db="id15442803_banking";
 
+$conn = mysqli_connect($host,$user,$password, $db);
+mysqli_select_db($conn, $db);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
-if(isset($_POST['submit'])){
-  //!Puts user data in database if their are no errors
-  if(!$errorBool){
-    //! Inserting each string into database
-    $Email = mysqli_real_escape_string($conn, $_POST['Email']);
-    $Password = mysqli_real_escape_string($conn, $_POST['Password']);
-    //! querys server and sets it to a 2darray
-     $sql = "SELECT Email, Password, ID FROM people WHERE Email='$Email' AND Password='$Password'";
-     //!error check
-     if(mysqli_query($conn,$sql)){
-       $result = $conn->query($sql);
+echo "Connected successfully";
 
-     	if ($result->num_rows > 0) {
-        	//! output data of each row in this case their should only be one row
-        	while($row = $result->fetch_assoc()) {
-        	$ID=$row["ID"];
-	 }
-
-          $sql = "INSERT INTO sessions(ID,endPT,startPT)
-                 VALUES('$ID',ADDTIME(NOW(),1800),NO())";
-                 
-     $sql = "SELECT sessionID  FROM sechions WHERE ID='$ID'";
-
-     while($row = $result->fetch_assoc()) {
-     $sessionID=$row["sessionID"];
-
+if(isset($_POST['username'])){
+    $uname=$_POST['username'];
+    $password=$_POST['password'];
+    
+    $sql="select * from LoginForm where User='".$uname."'AND Pass='".$password."' limit 1";
+    
+    $result=mysqli_query($sql);
+    
+    if(mysqli_num_rows($result)==1){
+        echo " you have successfully logged in";
+        exit();
     }
-          $_SESSION['sessionID']=$sessionID;
-          header("Location: ATMChoices.php?sessionID=".$sessionID);
-   exit();
-
-	} else {
-  echo "0 results";
-}
-    //!prints out error
-     }else{
-       echo "sql error ".mysqli_error($conn);
-     }
-  }
-}
+    else {
+        echo "You have entered the incorrect password";
+        exit();
+        }
+    }
+    
  ?>
  <!DOCTYPE html>
  <html>
@@ -84,32 +68,27 @@ if(isset($_POST['submit'])){
      }
 
  </style>
- <body>
+<body>
 
-     <h2>Login Form</h2>
-
-
+    <h2>Login Form</h2>
 
 
-     <form  class="" action="logIn.php" method="post">
-              <div class="container">
-                <!--gets Email-->
-                <label for="">Enter Your Email:</label><br>
-                <input type="text" name="Email" value= <?php echo $Email ?>><br>
-                <div class="red-text"><?php echo $errors['Email']; ?></div>
 
-                <!--gets Password-->
-                <label for="">Password:</label><br>
-                <input type="password" name="Password" value= <?php echo $Password ?>><br>
-                <div class="red-text"><?php echo $errors['Password']; ?></div>
+        </div>
+        <form method "POST" action="#">
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username"/>
 
-                <button input = "submit" type="submit" name="submit" value="submit">Login</button>
-     </form>
-     <form  class="" action="NewUser.php" method="post">
-               <button input = "submit" type="submit" name="submit" value="submit">New User</button>
-     </form>
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password"/>
+
+            <input type="submit" name="submit" value="LOGIN"/>
+             
+</form>
 
 
- </body>
+</body>
 
- </html>
+</html>
+
